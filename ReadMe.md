@@ -1,9 +1,4 @@
 # BASIC CHAT API - FAST API + AL LLM
-
-A Basic Chat Bot API Built using FastAPI and HuggingFace model as  the second project in this learning series.
-
-Added basic memory list to preserve the conversation.
-
 ---
 
 ## FEATURES
@@ -52,6 +47,8 @@ Added basic memory list to preserve the conversation.
             |
             |── images/
             |
+            |── .env
+            |
             |── requirements.txt
             |
             └── ReadMe.md
@@ -62,7 +59,7 @@ Added basic memory list to preserve the conversation.
 ## Installation & Setup for the project
 
 ```python
-git clone <your repo>
+git clone BASIC-CHAT-API---FAST-API-AL-LLM
 cd project-name
 
 pip install -r requirements.txt
@@ -83,6 +80,31 @@ venv/Scripts/Activate.ps1
 ```python
 
 pip install -r requirements.txt
+
+```
+---
+## Environment Variables (.env Setup)
+This project requires an API key to access HuggingFace LLMs.
+
+### 1. Create a .env file in the project root
+```python
+HUGGINGFACEHUB_API_TOKEN=your_api_key_here
+```
+
+### 2. Ensure the key loads in your code
+
+Example (in chat_llm.py):
+```python
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+HF_API_KEY = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+```
+### 3. Install dotenv if not installed
+```python
+pip install python-dotenv
 
 ```
 ---
